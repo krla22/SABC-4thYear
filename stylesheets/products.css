@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(32, 32, 32);
+}
+
+.navbar {
+    background-color: white;
+    border-bottom: 3px solid black;
+}
+
+.sensitive-niacinamide, .ultimate-brightening, .sensitive-oily {
+    display: flex;
+    margin: 9vw 5vw 5vw 5vw;
+    color: rgb(0, 0, 0);
+    background-color: white;
+}
+
+.sensitivenia-images, .ub-images, .sensoa-images {
+    height: 100%;
+    align-items: center;
+    text-align: center;
+}
+
+.sensitivenia-images > img, .ub-images > img, .sensoa-images > img {
+    width: 40vw;
+    padding: 1vw;
+}
+
+.sensitivenia-images > button, .ub-images > button, .sensoa-images > button {
+    padding: 1vw;
+    border-radius: 50px;
+    border: none;
+    background-color: rgb(158, 158, 158);
+    margin: 0 0 1vw 1vw;
+}
+
+.sensitivenia-images > button:hover, .ub-images > button:hover, .sensoa-images > button:hover {
+    background-color: rgb(88, 88, 88);
+    cursor: pointer;
+}
+
+.sensitivenia-text > input, .ub-text > input, .sensoa-text > input {
+    width: 2.5vw;
+}
+
+.sensitivenia-text, .ub-text, .sensoa-text {
+    margin: 1vw 1vw 0 0; 
+    font-size: 1.14vw;
+}
