@@ -1,10 +1,25 @@
-.navbar ul li a {
+/* .navbar ul li a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #282424;
+    padding-bottom: 0.5rem;
+} */
+
+.navbar {
+    box-shadow: -7px -7px 33px 5px rgba(0,0,0,0.57);
+    -webkit-box-shadow: -7px -7px 33px 5px rgba(0,0,0,0.57);
+    -moz-box-shadow: -7px -7px 33px 5px rgba(0,0,0,0.57);
+}
+
+.navbar > ul > li, a {
+    margin: 0.9vw 2vw 0 0;
+    font-size: 1.1vw;
+    padding: 0;
     text-transform: uppercase;
     text-decoration: none;
     color: #282424;
     padding-bottom: 0.5rem;
 }
-
 .navbar ul li a:hover {
     border-bottom: 2px solid #282424;
 }

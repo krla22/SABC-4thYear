@@ -1,0 +1,29 @@
+.bigcontainer {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 8vw 30vw 10vw;
+    box-shadow: 0px 2px 25px 7px rgba(0,0,0,0.41);
+    -webkit-box-shadow: 0px 2px 25px 7px rgba(0,0,0,0.41);
+    -moz-box-shadow: 0px 2px 25px 7px rgba(0,0,0,0.41);
+}
+
+.bigcontainer > button {
+    border: white 1px solid;
+    background-color: black;
+    color: white;
+    padding: 0.5vw 1vw;
+    margin: 1vw;
+    cursor: pointer;
+}
+
+.bigcontainer > button:hover {
+    border: black solid 1px;
+    background-color: white;
+    color: black;
+}
+
+.innercontainer {
+    background-color: #d7f5da;
+    margin: 0 3vw;
+    padding: 0.5vw 0vw;
+}

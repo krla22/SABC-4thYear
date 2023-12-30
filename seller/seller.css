@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url("images/banner2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    backdrop-filter: blur(8px);
+}
+
+#orderList {
+    max-width: 28.8vw;
+    width: 100%;
+    margin-top: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+#orderList table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#orderList th, #orderList td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#orderList th {
+    background-color: #434343;
+    color: white;
+}

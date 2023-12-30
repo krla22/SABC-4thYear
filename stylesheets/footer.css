@@ -1,0 +1,32 @@
+.footer-message a {
+    text-decoration: none;
+    margin: 3rem;
+}
+
+.footer-part {
+    background-color: white;
+    text-align: center;
+    margin: 0 0 0vw 0;
+    padding: 0.5vw 0 1vw 0;
+}
+
+.footer-part > a {
+    margin: 0vw 2vw 0.5vw 2vw ;
+    padding: 0;
+}
+
+.footer-part > p {
+    font-size: medium;
+    margin: 0 0 0.5vw 0;
+}
+
+.footer-part > h3 {
+    font-size: 1.5vw;
+    margin: 0.5vw 0 0 0;
+}
+
+.ending-footer {
+    width: 100vw;
+    background-color: rgb(32, 32, 32);
+    padding: 0.5vw;
+}

@@ -1,5 +1,9 @@
 body {
     background-color: rgb(32, 32, 32);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
 }
 
 .navbar {
@@ -7,11 +11,62 @@ body {
     border-bottom: 3px solid black;
 }
 
+.container {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+}
+
+.serums {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.serums-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.previousdiv {
+    margin: 10vw 0 10vw 1vw;
+    width: 4vw;
+    height: 4vw;
+    font-size: larger;
+}
+
+.nextdiv {
+    margin: 10vw 1vw 10vw 0vw;
+    width: 4vw;
+    height: 4vw;
+    font-size: larger;
+}
+
+.previousdiv, .nextdiv {
+    background-color: black;
+    color: white;
+    border: white solid 1px;
+}
+
+.previousdiv:hover, .nextdiv:hover {
+    background-color: white;
+    color: black;
+    border: black solid 1px;
+    cursor: pointer;
+}
+
 .sensitive-niacinamide, .ultimate-brightening, .sensitive-oily {
     display: flex;
-    margin: 9vw 5vw 5vw 5vw;
+    flex-direction: row;
+    margin: 2vw 2vw 2vw 1.3vw;
+    padding-bottom: 0.3vw;
     color: rgb(0, 0, 0);
     background-color: white;
+    flex-direction: row;
+    max-width: 88.5vw;
+    max-height: 65.5vh;
 }
 
 .sensitivenia-images, .ub-images, .sensoa-images {
@@ -21,28 +76,60 @@ body {
 }
 
 .sensitivenia-images > img, .ub-images > img, .sensoa-images > img {
-    width: 40vw;
-    padding: 1vw;
+    width: 29.3vw;
+    margin: 1.5vw 1vw 0 1vw;
+    border: black 1px solid;
 }
 
-.sensitivenia-images > button, .ub-images > button, .sensoa-images > button {
-    padding: 1vw;
-    border-radius: 50px;
-    border: none;
-    background-color: rgb(158, 158, 158);
-    margin: 0 0 1vw 1vw;
-}
-
-.sensitivenia-images > button:hover, .ub-images > button:hover, .sensoa-images > button:hover {
-    background-color: rgb(88, 88, 88);
+.changeimg > button {
+    margin-top: 0.1vw;
+    width: 4vw;
+    height: 2vw;
+    color: white;
+    background-color: black;
+    border: white solid 1px;
+    font-size: small;
+    font-style: bold;
     cursor: pointer;
 }
 
-.sensitivenia-text > input, .ub-text > input, .sensoa-text > input {
-    width: 2.5vw;
+.changeimg > button:hover {
+    background-color: white;
+    color: black;
+    border: black solid 1px;
 }
 
 .sensitivenia-text, .ub-text, .sensoa-text {
     margin: 1vw 1vw 0 0; 
     font-size: 1.14vw;
+    width: 62.5vw;
+}
+
+.footer-part {
+    background-color: white;
+    text-align: center;
+    margin: 0 0 0vw 0;
+    padding: 0.5vw 0 1vw 0;
+}
+
+.footer-part > a {
+    margin: 0vw 2vw 0.5vw 2vw ;
+    padding: 0;
+}
+
+.footer-part > p {
+    font-size: medium;
+    margin: 0 0 0.5vw 0;
+}
+
+.footer-part > h3 {
+    font-size: 1.5vw;
+    margin: 0.5vw 0 0 0;
+}
+
+.ending-footer {
+    flex-shrink: 0;
+    width: 100vw;
+    background-color: rgb(32, 32, 32);
+    padding: 0.5vw;
 }
