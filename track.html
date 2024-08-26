@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Track Order</title>
+    <link rel="stylesheet" href="stylesheets/navbar.css">
+    <link rel="stylesheet" href="stylesheets/new_nav.css">
+    <link rel="stylesheet" href="stylesheets/track.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<nav>
+    <div class="navbar">
+        <div>
+            <a href="index.html"><img class="logo" src="images/logo-2.png"></a>
+        </div>
+        <div class="parter"></div>
+        <ul>
+            <li> <i class="bi bi-balloon-heart-fill"></i>&nbsp;<a href="products.html"> Products </a></li>
+            <li> <i class="bi bi-basket3-fill"></i>&nbsp;<a href="checkout.html"> Checkout </a></li>
+            <li> <i class="bi bi-box2-heart-fill"></i>&nbsp;<a href="track.html"> Track Order </a> </li>
+        </ul>
+    </div>
+</nav>
+<body>
+    <div class="truecontainer">
+        <div class="container">
+            <div>
+                <h1>Track your SkinABCs order</h1>
+            </div>
+            <form id="trackForm">
+                <label for="orderCode">Enter Order Code:</label>
+                <input type="text" id="orderCode" name="orderCode" required>
+                <button type="submit">Track Order</button>
+            </form>
+        </div>
+    
+        <div id="result">
+            <h2>Your order details will appear here</h2>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('trackForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Get the order code from the form
+            const orderCode = document.getElementById('orderCode').value;
+
+            // Make a GET request to track-order.php
+            fetch(`track-order.php?orderCode=${orderCode}`)
+                .then(response => response.json())
+                .then(data => {
+                    // Display the order details
+                    const resultDiv = document.getElementById('result');
+                    
+                    // Blur the middle 5 digits of the contact number
+                    const blurredContactNumber = data.contact_number.replace(/(\d{3})\d{5}(\d{3})/, '$1*****$2');
+
+                    resultDiv.innerHTML = `
+                    <div>
+                        <hr>
+                        <h4>Status: ${data.status}
+                        <hr>
+                        <h4>Your order #${data.order_code} contains the following items:</h4>
+                        <hr>
+                        <h4>${data.sensnia_quantity}x of SkinABC's Niacinamide for Sensitive Skin</h4>
+                        <h4>${data.ub_quantity}x of SkinABC's Ultimate Brightening Serum</h4>
+                        <h4>${data.oaprone_quantity}x of SkinABC's Niacinamide for Oily-Acne Skin</h4>
+                        <hr>
+                        <h4>You will be contacted in your phone number, ${blurredContactNumber}.</h4>
+                        <hr>
+                        <h4>Thank you for the patience!</h4>
+                        <hr>
+                    </div>
+                    `;
+                    resultDiv.style.color = 'black'
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    document.getElementById('result').innerHTML = 'Error fetching data.';
+            });
+        });
+    </script>
+</body>
+<footer>
+    <div class="footer-part">
+        <h3>SkinABCs</h3>
+        <p>The NIACINAMIDE Authority of the Philippines</p>
+        <a href="https://www.facebook.com/SkinABCsOfficial/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/skinabcsph/?hl=en" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://shopee.ph/skinabcs" target="_blank"><i class="bi bi-bag-fill"></i></a>
+    </div>
+    <div class="ending-footer"></div>
+</footer>
+</html>

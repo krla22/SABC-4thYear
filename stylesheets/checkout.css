@@ -1,0 +1,277 @@
+.container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 1vw 10vw;
+    margin-top: 3.5vw;
+    background: rgb(32, 32, 32);
+    color: white;
+}
+
+.items {
+    display: flex;
+    flex-direction: column;
+}
+
+.field > div {
+    display: flex;
+}
+
+.field > input {
+    border-radius: 1vw;
+    border: 2px solid rgb(0, 0, 0);
+}
+
+.field > input::placeholder {
+    font-weight: bold;
+}
+
+.field > input:focus {
+    outline: none !important;
+    border: 2px solid rgb(255, 74, 74);
+}
+
+.display-img {
+    width: 50%;
+    height: auto;
+    padding-left: 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.display-img > img {
+    border: solid black 1px;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.full-content {
+    display: flex;
+}
+
+.inner-content {
+    margin: auto;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inner-text { 
+    align-items: center;
+    text-align: center;
+}
+
+.item-name {
+    font-size: 1.5vw;
+    margin: 2vw;
+}
+
+.price-class {
+    font-size: 1.25vw;
+}
+
+.sensia, .ultbri, .niaoil {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    margin: 1vw 1vw 0 1vw;
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+.niaoil {
+    margin-bottom: 1vw;
+}
+
+.number-input {
+    display: flex;
+    align-items: center;
+    margin: auto auto 3vw;
+}
+
+.number-input > input {
+    width: 2.5vw;
+    text-align: center;
+    border-radius: 1vw;
+}
+
+.number-input > input:focus {
+    outline: none !important;
+    border: 2px solid rgb(255, 74, 74);
+}
+
+#form {
+    margin: 1vw 1vw 1vw 0vw;
+    width: 100%;
+    height: auto;
+    background-color: white;
+    color: black;
+}
+
+#totalprice, #ubQ, #oaproneQ, #sensiaQ, #paymenttype, #orderID {
+    display: none;
+}
+
+.contact-details {
+    margin: 0 0 2vw 0;
+}
+
+.payment-details > h1, .contact-details > h1 {
+    text-align: left;
+    margin-left: 1vw;
+    margin-bottom: 0;
+}
+
+.payment-details > p:first-of-type{
+    text-align: left;
+    margin-left: 1vw;
+    margin-top: 0;
+    color: rgb(131, 131, 131);
+}
+
+.fieldholder, .deliveryformheader {
+    border: black solid 1px;
+    width: 100%;
+}
+
+.field {
+    display: flex;
+    justify-content: center;
+    margin-top: 1vw;
+    margin: 1vw;
+}
+
+.field > input {
+    width: 100%;
+    height: 2vw;
+    padding: 5px;
+}
+
+.total-number {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    border: black solid 1px;
+    width: 100%;
+}
+
+#items, #total {
+    margin: 0;
+    font-weight: 200;
+}
+
+.paynow > input:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    border: black solid 1px;
+}
+
+.confirmorderdiv {
+    width: 100%;
+    border: black solid 1px;
+    padding: 1vw 0vw;
+}
+
+.confirmorderdiv > input {
+    padding: 1vw 4vw;
+    background-color: rgb(32, 32, 32);
+    color: white;
+    cursor: pointer;
+    font-size: medium;
+    border: rgb(255, 255, 255) solid 2px;
+}
+
+.confirmorderdiv > input:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    font-size: medium;
+    border: black solid 2px;
+}
+
+.paymentmethods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    border: black solid 1px;
+    align-items: center;
+}
+
+#cod {
+    border: black solid 1px;
+    margin: 0vw 0vw 0vw 0vw;
+    padding: 0vw;
+    width: 90%;
+    height: 100%;
+    border: black solid 1px;
+    text-align: center;
+    align-items: center;
+}
+
+#maya {
+    display: none;
+    border: black solid 1px;
+    padding: 0vw;
+    width: 90%;
+    height: 100%;
+    margin: 0 0vw 0 0vw;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#gcash {
+    display: none;
+    padding: 0vw;
+    width: 90%;
+    height: 100%;
+    margin: 0 8vw 0 0vw;
+    text-align: center;
+    border: black solid 1px;
+    vertical-align: middle;
+    align-items: center;
+}
+
+#cod > h3, #maya > h3, #gcash > h3 {
+    padding: 0;
+    width: 100%;
+}
+
+.radioorganize {
+    flex-direction: column;
+    display: flex;
+    align-items: start;
+    margin: 0vw 0vw 0vw 3vw;
+    padding: 0;
+}
+
+.paymentradio {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.paymentradio > h3 {
+    margin: 0.5vw;
+}
+
+.paymentradio:first-child {
+    margin-top: 1.5vw;
+}
+
+.paymentradio:last-child {
+    margin-bottom: 1vw;
+}
+
+.pay-explanations {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+
+

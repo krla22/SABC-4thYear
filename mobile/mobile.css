@@ -1,0 +1,45 @@
+.bigcontainer {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 8vw;
+    padding: 5vw;
+    border: 1px dotted black;
+}
+
+.innercontainer {
+    background-color: #d7f5da;
+    margin: auto;
+    padding: 0.5vw 0vw;
+}
+
+.footer-mobile {
+    position: fixed;
+    align-content: center;
+    align-content: center;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(244, 244, 244);
+    color: black;
+    text-align: center;
+}
+
+.icon-div {
+    margin-bottom: 5vw;
+}
+
+.icons {
+    font-size: 5vw;
+    color: black;
+}
+
+.logo-holder {
+    width: 100%;
+    border: 1px dotted black;
+    text-align: center;
+    padding: 5vw 0vw;
+}
+
+.logo {
+    width: 90%;
+}

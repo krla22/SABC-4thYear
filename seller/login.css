@@ -1,0 +1,64 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    background-image: url("images/banner2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    backdrop-filter: blur(8px);
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(122, 122, 122, 0.4);
+    width: 39vw;
+    color: rgb(68, 68, 68);
+    border-radius: 30px;
+    margin: auto;
+}
+
+#loginForm {
+    color: black;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30vw;
+    font-size: large;
+    margin: 0 auto 2vw;
+}
+
+.loginbtn {
+    margin: 0vw 0vw 1vw;
+    border-radius: 80px;
+    max-width: 5vw;
+    font-size: medium;
+}
+
+#loginForm label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+#loginForm input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+#loginForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

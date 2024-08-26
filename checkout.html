@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkinABCs Checkout</title>
+    <link rel="stylesheet" href="stylesheets/navbar.css">
+    <link rel="stylesheet" href="stylesheets/checkout.css">
+    <link rel="stylesheet" href="stylesheets/new_nav.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<nav>
+    <div class="navbar">
+        <div>
+            <a href="index.html"><img class="logo" src="images/logo-2.png"></a>
+        </div>
+        <div class="parter"></div>
+        <ul>
+            <li> <i class="bi bi-balloon-heart-fill"></i>&nbsp;<a href="products.html"> Products </a></li>
+            <li> <i class="bi bi-basket3-fill"></i>&nbsp;<a href="checkout.html"> Checkout </a></li>
+            <li> <i class="bi bi-box2-heart-fill"></i>&nbsp;<a href="track.html"> Track Order </a> </li>
+        </ul>
+    </div>
+</nav>
+<body>
+    <div class="container">
+        <div class="items">
+            <div class="sensia">
+                <div class="full-content">
+                    <div class="display-img">
+                        <img src="images/sensnia-serum-update.png">
+                    </div>
+                    <br>
+                    <div class="inner-content">
+                        <div class="inner-text">
+                            <p class="item-name"> SkinABC's Niacinamide for Sensitive Skin </p>
+                            <p class="price-class"> ₱255 </p>
+                        </div>
+                        <div class="number-input">
+                            <input class="quantity" id="sensniaQuantity" min="0" name="sensniaQuantity" value="0" type="number">
+                            <button type="button" onclick="sensniaMinus();"> - </button>
+                            <button type="button" onclick="sensniaPlus();"> + </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ultbri">
+                <div class="full-content">
+                    <div class="display-img">
+                        <img class="ub-serum" src="images/ub-serum-update.png">
+                    </div>
+                    <br>
+                    <div class="inner-content">
+                        <div class="inner-text">
+                            <p class="item-name"> SkinABC's Ultimate Brightening Serum</p>
+                            <p class="price-class"> ₱480 </p>
+                        </div>
+                        <div class="number-input">
+                            <input class="quantity" id="ubQuantity" min="0" name="ubQuantity" value="0" type="number">
+                            <button type="button" onclick="ubMinus()"> - </button>
+                            <button type="button" onclick="ubPlus()" class="plus"> + </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="niaoil">
+                <div class="full-content">
+                    <div class="display-img">
+                        <img src="images/oaprone-update.png">
+                    </div>
+                    <div class="inner-content">
+                        <div class="inner-text">
+                            <p class="item-name"> SkinABC's Niacinamide for Oily-Acne Skin </p>
+                            <p class="price-class"> ₱290 </p>
+                        </div>
+                        <div class="number-input">
+                            <input class="quantity" id="oaproneQuantity" min="0" name="oaproneQuantity" value="0" type="number">
+                            <button type="button" onclick="oaproneMinus()"> - </button>
+                            <button type="button" onclick="oapronePlus()" class="plus"> + </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form id="form" method="post" action="save-order.php">
+            <div class="deliveryformheader">
+                <h1>Delivery Form</h1>
+            </div>
+            <div class="fieldholder">
+                <div class="field">
+                    <input type="text" name="firstname" id="firstname" placeholder="First Name">
+                    <input type="text" name="lastname" id="lastname" placeholder="Last Name">
+                </div>
+                <div class="field">
+                    <input type="text" name="address" id="address" placeholder="Address">
+                </div>
+                <div class="field">
+                    <input type="text" name="phonenumber" id="phonenumber" placeholder="Phone Number">
+                </div>
+                <div class="field">
+                    <input type="text" name="email" id="email" placeholder="E-Mail">
+                </div>
+                <div class="field">
+                  <input type="text" name="totalprice" id="totalprice">
+                  <input type="text" name="sensniaQ" id="sensiaQ">
+                  <input type="text" name="ubQ" id="ubQ">
+                  <input type="text" name="oaproneQ" id="oaproneQ">
+                  <input type="text" name="paymenttype" id="paymenttype">
+                  <input type="text" name="orderID" id="orderID">
+                </div>
+            </div>
+            <div class="paymentmethods">
+                <div class="radioorganize">
+                    <div class="paymentradio">
+                        <input type="radio" name="payment-methods" id="radiocod" onclick="showCod()" checked="checked">
+                        <h3>Cash on Delivery</h3>
+                    </div>
+                    <div class="paymentradio">
+                        <input type="radio" name="payment-methods" id="radiocod" onclick="showGcash()">
+                        <h3>E-Wallet</h3>
+                    </div>
+                    <div class="paymentradio">
+                        <input type="radio" name="payment-methods" id="radiocod" onclick="showMaya()">
+                        <h3>Card</h3>
+                    </div>
+                </div>
+                <div class="pay-explanations">
+                    <div id="cod">
+                        <h3>Please prepare the exact amount to pay the order!</h3>
+                    </div>
+                    <div id="gcash">
+                        <h3>All transactions are safe and secured!</h3>
+                    </div>
+                    <div id="maya">
+                        <h3>You will be redirected to a new page for the payment</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="total-number">
+                <h2>Number of Items: <p id="items">0</p></h2>
+                <h2>Total Price:  <p name="total" id="total">₱0</p></h2>
+            </div>
+            <div class="confirmorderdiv">
+                <input type="submit" id="button" value="Confirm Order" >
+            </div>
+        </form>
+          
+    </div>    
+    <div class="footer-part">
+        <h3>SkinABCs</h3>
+        <p>The NIACINAMIDE Authority of the Philippines</p>
+        <a href="https://www.facebook.com/SkinABCsOfficial/" target="_blank"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.instagram.com/skinabcsph/?hl=en" target="_blank"><i class="bi bi-instagram"></i></a>
+        <a href="https://shopee.ph/skinabcs" target="_blank"><i class="bi bi-bag-fill"></i></a>
+    </div>
+    <div class="ending-footer"></div>
+    <script src="scripts/checkout.js"></script>
+    <script type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    
+    <script type="text/javascript">
+                emailjs.init('4EKK4RbH1Jbpu_M4Y')
+        
+                const btn = document.getElementById('button');
+        
+                document.getElementById('form')
+                .addEventListener('submit', function(event) {
+                    event.preventDefault();
+
+                    let orderIDInput = document.getElementById('orderID');
+                    let orderCode = generateOrderCode();
+
+                    orderIDInput.value = orderCode;
+
+                    var totalPrice = parseFloat(document.getElementById('total').innerText.replace('₱', ''))
+                    var paymentway = document.getElementById('paymenttype').value;
+
+                    var sensniaQ = parseInt(document.getElementById('sensniaQuantity').value);
+                    var ubQ = parseInt(document.getElementById('ubQuantity').value);
+                    var oaproneQ = parseInt(document.getElementById('oaproneQuantity').value);
+
+                    if (sensniaQ === 0 && ubQ === 0 && oaproneQ === 0) {
+                        // alert('Your cart is empty!');
+                        return;
+                    }
+
+                    var address = document.getElementById('address').value;
+                    var emailAdd = document.getElementById('email').value;
+                    var contactNumber = document.getElementById('phonenumber').value;
+
+                    if (address === '' || emailAdd === '' || contactNumber === '') {
+                        // alert('Incomplete address details!');
+                        return;
+                    }
+
+                    var firstName = document.getElementById('firstname').value;
+                    var lastName = document.getElementById('lastname').value;
+
+                    if (firstName === '' || lastName === '') {
+                        // alert('Your name is incomplete!');
+                        return;
+                    }
+
+                    const order = {
+                        orderCode: orderCode,
+                        status: 'Processing',
+                        items: {
+                            sensnia: sensniaQ,
+                            ub: ubQ,
+                            oaprone: oaproneQ,
+                        },
+                        details: {
+                            firstName: firstName,
+                            lastName: lastName,
+                            address: address,
+                            contactNumber: contactNumber,
+                            emailAdd: emailAdd,
+                            totalPrice: totalPrice,
+                        }
+                    }
+                    
+                    fetch("save-order.php", {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': "application/json; charset=utf-8",
+                        },
+                        body: JSON.stringify(order),
+                    })
+                    .then(function(response){
+                        return response.text();
+                    })
+                    .then(function(data){
+                        // alert(data);
+                    })
+
+                    btn.value = 'Completing Transaction...';
+
+                    if (paymentway === 'e-wallet') {
+                        const options = {
+                        method: 'POST',
+                        headers: {
+                            accept: 'application/json',
+                            'content-type': 'application/json',
+                            authorization: 'Basic cGstcnB3YjVZUjZFZm5LaU1zbGRacVk0aGdwdkpqdXk4aGh4VzJiVkFBaXoyTjpjR3N0Y25CM1lqVlpValpGWm01TGFVMXpiR1JhY1ZrMGFHZHdka3BxZFhrNGFHaDRWekppVmtGQmFYb3lUZz09'
+                        },
+                        body: JSON.stringify({
+                            totalAmount: {value: totalPrice, currency: 'PHP'},
+                            redirectUrl: {
+                            success: `http://localhost/SABC-4thYear/success.html?orderID=${orderCode}`,
+                            failure: 'http://localhost/SABC-4thYear/failed.html',
+                            cancel: 'http://localhost/SABC-4thYear/cancelled.html'
+                            },
+                            metadata: {
+                            pf: {smi: 'sabc', smn: 'SkinABCs', mci: 'Makati', mpc: '608', mco: 'PHL'},
+                            subMerchantRequestReferenceNumber: orderCode
+                            },
+                            requestReferenceNumber: orderCode,
+                            userId: contactNumber
+                        })
+                        };
+                            fetch('https://pg-sandbox.paymaya.com/payby/v2/paymaya/payments', options)
+                                .then(response => response.json())
+                                .then(response => {
+                                    console.log(response);
+                                    if (response && response.redirectUrl) {
+                                        window.location.href = response.redirectUrl;
+                                    } else {
+                                        console.error('Unexpected API response:', response);
+                                    }
+                                })
+                                .catch(err => console.error('Error during fetch:', err));
+
+                            const serviceID = 'default_service';
+                            const templateID = 'template_t21kwqc';
+        
+                            emailjs.sendForm(serviceID, templateID, this)
+                                .then(() => {
+                                alert('Order successful!');
+                                }, (err) => {
+                                alert(JSON.stringify(err));
+                            });
+                    } else if (paymentway === 'card') {
+                        const options = {
+                        method: 'POST',
+                        headers: {
+                            accept: 'application/json',
+                            'content-type': 'application/json',
+                            authorization: 'Basic cGstTkNMazdKZURiWDFtMjJaUk1EWU85YkVQb3dOV1Q1SjRhTklLSWJjVHkyYTpjR3N0VGtOTWF6ZEtaVVJpV0RGdE1qSmFVazFFV1U4NVlrVlFiM2RPVjFRMVNqUmhUa2xMU1dKalZIa3lZUT09'
+                        },
+                        body: JSON.stringify({
+                            totalAmount: {value: totalPrice, currency: 'PHP'},
+                            redirectUrl: {
+                            success: `http://localhost/SABC-4thYear/success.html?orderID=${orderCode}`,
+                            failure: 'http://localhost/SABC-4thYear/failed.html',
+                            cancel: 'http://localhost/SABC-4thYear/cancelled.html'
+                            },
+                            metadata: {
+                            pf: {smi: 'sabc', smn: 'SkinABCs', mci: 'Makati', mpc: '608', mco: 'PHL'},
+                            subMerchantRequestReferenceNumber: orderCode
+                            },
+                            requestReferenceNumber: orderCode
+                        })
+                        };
+                        fetch('https://pg-sandbox.paymaya.com/checkout/v1/checkouts', options)
+                                .then(response => response.json())
+                                .then(response => {
+                                    console.log(response);
+                                    if (response && response.redirectUrl) {
+                                        window.location.href = response.redirectUrl;
+                                    } else {
+                                        console.error('Unexpected API response:', response);
+                                    }
+                                })
+                                .catch(err => console.error('Error during fetch:', err));
+
+                            const serviceID = 'default_service';
+                            const templateID = 'template_t21kwqc';
+        
+                            emailjs.sendForm(serviceID, templateID, this)
+                                .then(() => {
+                                alert('Order successful!');
+                                }, (err) => {
+                                alert(JSON.stringify(err));
+                            });
+                    } else {
+                        const serviceID = 'default_service';
+                        const templateID = 'template_t21kwqc';
+    
+                        emailjs.sendForm(serviceID, templateID, this)
+                            .then(() => {
+                            window.location.href = `success.html?orderID=${orderCode}`;
+                            }, (err) => {
+                            btn.value = 'Send Email';
+                            alert(JSON.stringify(err));
+                        });
+                    }         
+                });
+    </script>   
+</body>
+</html>
